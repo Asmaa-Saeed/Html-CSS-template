@@ -426,6 +426,289 @@ ul {
     cursor: pointer;
 }
 /* end articles */
+
+/* start gallery */
+ .gallery {
+    padding-top:var(--main-padding-top) ;
+    padding-bottom: var(--main-padding-bottom);
+    background-color: var(--main-background-color);
+    position: relative;
+ }
+ .gallery .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+ }
+ .gallery .container .box  {
+    padding: 15px;/*this is to make the borders around the photo instead of the border code that I have made*/
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%); 
+ }
+
+ .gallery .container .image {
+    position: relative;
+    overflow: hidden;
+ }
+ .gallery .container .image::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255 255 255 /40%);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: 1;
+ }
+
+ .gallery .container .image:hover::before {
+    animation: flashing 0.7s;
+ }
+
+ .gallery .container .box img {
+    max-width: 100%;
+    transition: var(--main-transition-duration);
+ }
+
+ .gallery .container .image:hover img {
+    transform: rotate(5deg) scale(1.1);
+ }
+
+/* end gallery */
+
+/* start features */
+.features {
+    padding-top:var(--main-padding-top) ;
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: white;
+}
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+
+
+/* this code will make the action on the photo */
+.features .container .image-holder {
+    position: relative;
+    overflow: hidden;
+}
+
+.features .container .image-holder::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+.features .container .image-holder::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0 0 190px  500px;  ;
+    border-color: transparent transparent white transparent ;
+    transition: var(--main-transition-duration);
+}
+
+.features .container .feature:hover .image-holder::after {
+    border-width: 190px 500px 190px 0;
+}
+
+.features .container .feature {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding-bottom: 60px;
+}
+.features  .container .feature img {
+    max-width: 100%;
+}
+
+.features .container .feature .content {
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.features .container .feature .content h3 {
+    font-size: 40px;
+    margin: auto;
+    width: fit-content;
+    position: relative;
+}
+
+.features .content h3::after {
+    content:  "";
+    position: absolute;
+    bottom: -15px;
+    left: 15px;
+    height:5px ;
+    width: calc(100% - 30px);
+}
+
+.features .content p {
+    color: var(--light-color);
+    line-height: var(--line-height);
+    font-size: 20px;
+}
+
+.features .container .feature a {
+    padding: 10px 25px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: var(--main-transition-duration);
+}
+
+.features .container .feature:hover a {
+    background-position: left bottom;
+    color: white;
+}
+  /* feature one styles */
+.features .container .one .image-holder::before {
+    background-color: rgb(244 64 54 / 60%);
+}
+
+.features .container .one h3::after {
+    background-color: rgb(244, 64, 54);
+}
+
+
+.features .container .one a {
+    border: 3px solid rgb(244, 64, 54);
+    color: rgb(244, 64, 54);
+    background: linear-gradient(to right, rgb(244, 64, 54) 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    
+}
+
+/* feature two styles */
+
+.features .container .two .image-holder::before {
+    background-color: rgb(0 150 136 /60%);
+}
+.features .container .two h3::after {
+    background-color: rgb(0, 150, 136);
+}
+.features .container  .two a {
+    border: 3px solid rgb(0, 150, 136);
+    color: rgb(0, 150, 136);
+    background: linear-gradient(to right, rgb(0, 150, 136) 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+/* feature three styles */
+
+.features .container .three .image-holder::before {
+    background-color:rgb(3 169 244 / 60%);
+}
+
+
+.features .container .three h3::after {
+    background-color: var(--main-color);
+}
+.features .container  .three a {
+    border: 3px solid var(--main-color);
+    color: var(--main-color);
+    background: linear-gradient(to right,rgb(3 169 244) 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+/* end features */
+
+/* start testimonials */
+.testimonials {
+    padding-top:var(--main-padding-top) ;
+    padding-bottom: var(--main-padding-bottom);
+    background-color: var(--main-background-color);
+   
+}
+
+.testimonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.testimonials .box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 7%);   
+    position:relative;
+}
+/* this code is to made the image appear in the forward shape */
+.testimonials .box img {
+    position: absolute;
+    border-radius: 50%;
+    right:-10px;
+    top:-30px;
+    height: 100px;
+    width: 100px;
+    border: 6px solid var(--main-background-color);
+}
+
+.testimonials .box h3 {
+    font-size: 20px;
+    color: var(--main-color);
+    margin-top: -1px;
+}
+
+.testimonials .box span {
+    color: #777;
+   
+}
+.testimonials .box p {
+    color: #777;
+    line-height: var(--line-height);
+    margin-bottom: 0;
+
+}
+
+.testimonials .rate {
+    margin-top: 15px;
+}
+
+.testimonials .rate .filled {
+    color:#ffc107
+}
+/* end testimonials */
+  /* start team  */
+    .team {
+        padding-top:var(--main-padding-top) ;
+        padding-bottom: var(--main-padding-bottom);
+    }
+    .team .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 40px;
+    }
+    .team .box {
+        padding: 1px;
+        box-shadow: 0 2px 15px rgb(0 0 0 / 10%);   
+    }
+
+    .team .box .data {
+        display: flex;
+    }
+
+    .team .box .data img {
+        max-width: 100%;
+    }
+
+    .team .box .data i {
+        color: var(--main-color);
+        margin-top: 20px;
+        align-items:center;
+    }
+  /* end team */
 /* start animation */
  @keyframes up-and-down {
     0%, 100% {
@@ -477,6 +760,18 @@ ul {
  @keyframes right-and-left {
     100%{
         transform: translateX(10px);
+    }
+ }
+
+ @keyframes flashing {
+    0%, 40% {
+     opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+        width: 200%;
+        height: 200%;
     }
  }
 /* end animation */
