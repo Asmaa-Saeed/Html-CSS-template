@@ -408,21 +408,21 @@ ul {
     margin: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: var(--main-color);
-    position: relative;
 }
 
 .articles .container .box .info a {
     color: var(--main-color);
-
+    font-weight: bold;
 }
 
-.articles .container .box .info li {
-    position: absolute;
-    animation: right-and-left 5s linear infinite ;
+.articles .container .box:hover .info i {
+    font-weight: bold;
+    animation: right-and-left 0.5s linear infinite ;
 }
 
-.articles .container .box .info li:hover {
+.articles .container .box .info i:hover {
     cursor: pointer;
 }
 /* end articles */
@@ -475,14 +475,8 @@ ul {
  }
 
  @keyframes right-and-left {
-    0%, 10%, 20%, 50%, 80%, 100%{
-        
-        transform: translateX(0);
-    }
-
-    40%, 60% {
-       
-        transform: translateX(-15);
+    100%{
+        transform: translateX(10px);
     }
  }
 /* end animation */
