@@ -776,6 +776,30 @@ ul {
         color: #777;
     }
   /* end team */
+
+    /* start services */
+    .services {
+        padding-top:var(--main-padding-top) ;
+        padding-bottom: var(--main-padding-bottom);
+        background-color: var(--main-background-color);
+        position: relative;
+    }
+
+    .services .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .services .box {
+        background-color: white;
+        padding: 50px;
+        box-shadow: 0 2px 15px rgb(0 0 0 / 10%); 
+    }
+
+    
+    /* end services */
+
 /* start animation */
  @keyframes up-and-down {
     0%, 100% {
